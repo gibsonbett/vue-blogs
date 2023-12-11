@@ -3,7 +3,8 @@
     <div v-for="(singlePost, index) in post" :key="index">
       <h2 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">{{ singlePost.title }}</h2>
       <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{ singlePost.body }}</p>
-      <div class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100" v-for="tag in singlePost.tags" :key="tag">{{ tag }}</div>
+      <a :href="singlePost.tag" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100" v-for="tag in singlePost.tags" :key="tag">{{ tag }}</a>
+      <!-- <div class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100" v-for="tag in singlePost.tags" :key="tag">{{ tag }}</div> -->
       <div>Likes: {{ singlePost.reactions }}  </div>
     </div>
   </div>
